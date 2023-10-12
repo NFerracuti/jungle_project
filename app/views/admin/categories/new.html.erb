@@ -1,0 +1,12 @@
+<!-- app/views/admin/categories/new.html.erb -->
+
+<h1>Add New Category</h1>
+
+<%= form_for [:admin, @category] do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>

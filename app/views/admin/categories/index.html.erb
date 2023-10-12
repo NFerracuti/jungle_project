@@ -1,0 +1,25 @@
+<!-- app/views/admin/categories/index.html.erb -->
+
+<h1>Admin Categories</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td>
+      <%= link_to 'Edit', edit_admin_category_path(category), class: "btn btn-primary" %>
+      <%= link_to 'Delete', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure? Category will not be deleted if products exist in it.' }, class: "btn btn-danger" %>
+    </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Category', new_admin_category_path, class: 'btn btn-primary' %>
